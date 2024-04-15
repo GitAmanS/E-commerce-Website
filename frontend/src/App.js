@@ -1,15 +1,18 @@
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import ItemsGrid from './components/ItemsGrid';
-
+import ProductGrid from './components/ProductGrid.js';
+import { ContextProvider } from './Context/Context.js';
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <ItemsGrid/>
-      <Footer/>
-    </div>
+    <ContextProvider>
+      <div className="App">
+        <Header/>
+        <ProductGrid/>
+        <Footer/>
+      </div>
+    </ContextProvider>
+
   );
 }
 
