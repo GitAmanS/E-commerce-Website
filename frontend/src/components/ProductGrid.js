@@ -2,7 +2,7 @@ import React from 'react';
 import { useData } from '../Context/Context.js';
 
 const ProductGrid = () => {
-  const { cartElements } = useData();
+  const { cartElements, addToCart } = useData();
   return (
     <div className="row justify-content-center">
       {cartElements.map((product, index) => (
@@ -13,6 +13,9 @@ const ProductGrid = () => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">Price: ${product.price}</p>
               <p className="card-text">Quantity: {product.quantity}</p>
+              <button className='w-100 rounded border-none' onClick={()=>{addToCart(product)}}>
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>

@@ -43,15 +43,31 @@ const ContextProvider = ({ children }) => {
     }
     
     ]
+    const [cart, setCart] = useState([]);
+
+    const addToCart=(item)=>{
+      setCart((oldcart)=>{
+        return [...oldcart, item];
+      })
+    }
+
+
+    const removeFromCart=(item)=>{
+      setCart((oldcart)=>{
+        return oldcart.form((item1)=>{return item1 !== item})
+      })
+    }
     
   
     return (
-        <Context.Provider value={{ cartElements}}>
+        <Context.Provider value={{ cartElements, cart, setCart, addToCart, removeFromCart}}>
           {children}
         </Context.Provider>
       );
 
 };
+
+
 
 
 const useData = () => {

@@ -1,0 +1,21 @@
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hide the cart off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    transition: right 0.3s ease; /* Apply transition effect */
+    z-index: 999; /* Ensure the cart appears above other content */
+  }
+  
+  .cart-modal.show {
+    right: 0; /* Slide the cart to show it */
+  }
+  
+  .cart-content {
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
